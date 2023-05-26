@@ -1,0 +1,141 @@
+@charset "UTF-8";
+
+:root {
+  /*colors project*/
+  --LaranjaClaro: #b37812;
+  --Marrom: #584423;
+  --MarromClaro: #a59882;
+  --VerdeClaro: #3ae9b6;
+  --Azul: #123357;
+  /**************************/
+}
+/*fonts project*/
+@font-face {
+  font-family: "OpenSans";
+  src: url("../font/OpenSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PlayFairDisplay";
+  src: url("../font/PlayfairDisplay-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/******************************************************/
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "PlayFairDisplay";
+}
+
+p,
+a {
+  font-family: "OpenSans";
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+main {
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+  min-height: 100vh;
+  margin-bottom: 6rem;
+}
+
+.title {
+  text-align: center;
+  padding-top: 6rem;
+  margin-bottom: 3rem;
+}
+
+.title h1 {
+  background-color: var(--LaranjaClaro);
+  display: inline;
+  border-radius: 0.3rem;
+  font-size: 2rem;
+  padding: 0.3rem;
+  color: white;
+}
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.card {
+  width: 40%;
+  max-width: 300px;
+  margin: 1rem;
+  overflow: hidden;
+  border-radius: 0.4rem;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.216);
+}
+
+.cardHeader {
+  text-align: center;
+  color: var(--Marrom);
+  padding: 1rem 1rem 0rem 1rem;
+}
+
+.cardHeader h1 {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1.5px solid var(--Marrom);
+  line-break: anywhere;
+}
+.cardFooter {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.cardFooter a {
+  font-size: 1rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: scale(1.03);
+  }
+}
+
+.msg {
+  background-color: var(--MarromClaro);
+  border: 2px solid var(--Marrom);
+  width: 50%;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 0.4rem;
+  color: white;
+  padding: 1rem;
+  margin: auto;
+  margin-bottom: 3rem;
+}
+
+.backPage {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 6rem;
+}
+.backPage a {
+  padding-bottom: 0rem;
+  display: inline;
+}

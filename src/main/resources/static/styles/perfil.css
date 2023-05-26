@@ -1,0 +1,160 @@
+@charset "UTF-8";
+
+:root {
+  /*colors project*/
+  --LaranjaClaro: #b37812;
+  --Marrom: #584423;
+  --MarromClaro: #a59882;
+  --VerdeClaro: #3ae9b6;
+  --Azul: #123357;
+  /**************************/
+}
+/*fonts project*/
+@font-face {
+  font-family: "OpenSans";
+  src: url("../font/OpenSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PlayFairDisplay";
+  src: url("../font/PlayfairDisplay-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/******************************************************/
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "PlayFairDisplay";
+}
+
+p,
+a {
+  font-family: "OpenSans";
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+strong {
+  color: var(--Marrom);
+}
+
+main {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+}
+
+.title {
+  padding-top: 2rem;
+}
+
+.title h1 {
+  text-align: center;
+  color: var(--Marrom);
+  font-size: 3rem;
+  padding-bottom: 1rem;
+}
+.title p {
+  text-align: justify;
+}
+
+.title p {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+p {
+  font-size: 1rem;
+  line-height: 1.8rem;
+}
+div.img {
+  background-image: url(../images-project/img-esqueceu.jpg);
+  background-size: cover;
+  background-position: left center;
+  height: 300px;
+}
+
+.details {
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 0.4rem;
+  margin-bottom: 10rem;
+  transition: 0.3s ease;
+}
+.camps {
+  padding: 1rem;
+}
+.camp {
+  margin: 1rem;
+}
+.camp p {
+  display: block;
+  border: 2px solid var(--Marrom);
+  border-radius: 0.4rem;
+  width: 100%;
+  padding: 0.3rem;
+  font-size: 1rem;
+  word-break: break-all;
+}
+.btns a {
+  margin: 0;
+  padding: 0;
+}
+.btns button {
+  margin: 1rem;
+}
+
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.btns a {
+  font-size: 1rem;
+}
+
+div.msg {
+  background-color: var(--MarromClaro);
+  border: 2px solid var(--Marrom);
+  width: 50%;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 0.4rem;
+  color: white;
+  padding: 1rem;
+  margin: auto;
+}
+
+.msg p {
+  margin: 0;
+  text-align: center;
+}
+
+.backPage {
+  margin: auto;
+  text-align: center;
+}
+
+.backPage a {
+  display: inline;
+}

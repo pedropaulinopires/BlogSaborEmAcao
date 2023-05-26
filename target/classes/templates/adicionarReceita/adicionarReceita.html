@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" th:href="@{/images-project/favicon.ico}" type="image/x-icon">
+
+    <!--thymleaf-->
+    <link rel="stylesheet" th:href="@{/styles/footer.css}">
+
+    <link rel="stylesheet" th:href="@{/styles/modalLogout.css}">
+
+    <link rel="stylesheet" th:href="@{/styles/adicionarReceita.css}">
+
+    <link rel="stylesheet" th:href="@{/styles/menu.css}">
+
+    <link rel="stylesheet" th:href="@{/styles/buttons.css}">
+
+
+    <link rel="stylesheet" th:href="@{/styles/scrollToTop.css}">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Adicionar receita</title>
+</head>
+
+<body onresize="resetMenu()">
+   <!--modal logout-->
+   <div th:replace="~{fragments/modalFragment :: fadeLogout}"></div>
+   <div th:replace="~{fragments/modalFragment :: modalLogout}"></div>
+   <!--end modal logout-->
+
+    <!--header mobile-->
+    <header th:replace="~{fragments/fragmentsAdm :: menuMobile}" id="headerMobile"></header>
+    <!--end header mobile-->
+
+    <!--header desktop-->
+    <header th:replace="~{fragments/fragmentsAdm :: menuDesktop}" id="headerDesktop"></header>
+
+    <!--main -->
+    <main onclick="closeMenuMobile()">
+        <section class="title">
+            <h1>Adicionar Receita</h1>
+        </section>
+        <form th:object="${revenueRequest}" th:action="@{/adm/salvarReceita}" method="POST" enctype="multipart/form-data">
+            <div class="camp">
+                <label class="labelFloat">Nome da Receita</label>
+                <input type="text" name="name" th:field="*{name}" >
+                <p class="invalid" th:errors="*{name}"></p>
+                <p class="invalid" th:if="${revenueExist}">Já existe uma receita com esse nome!</p>
+            </div>
+
+            <div class="campText">
+                <label for="idatails">Detalhes</label>
+                <textarea id="idatails" name="details"  th:field="*{details}" cols="30" rows="10"></textarea>
+                <p class="invalid" th:errors="*{details}"></p>
+            </div>
+                
+                <div class="campText">
+                    <label for="iIngredientes">Ingredientes</label>
+                    <textarea id="iIngredientes" name="ingredients" th:field="*{ingredients}" cols="30" rows="10"></textarea>
+                    <p class="invalid"  th:errors="*{ingredients}"></p>
+                </div>
+                    <div class="campText">
+                        <label for="ipreparation">Modo de preparo</label>
+                        <textarea id="ipreparation" name="preparation" th:field="*{preparation}" cols="30" rows="10"></textarea>
+                        <p class="invalid" th:errors="*{preparation}"></p>
+                    </div>
+                        <div class="campSelect">
+                            <label for="isection"> Sessão</label>
+                            <select name="section" id="isection">
+                                <option th:each="list : ${listSection}" th:value="${list.id}" th:text="${list.name}" th:field="*{section}"></option>
+                              </select>
+                        </div>
+
+                        <div class="campImg">
+                            <label for="iimage">Imagem da receita</label>
+                            <input type="file" name="file" id="iimage">
+                            <p class="invalid" th:if="${fileNull}">Campo de imagem obrigatório!</p>
+                        </div>
+
+            <div class="options">
+                <input type="submit" value="Adicionar" class="btnDetails">
+                <a onclick="javascript:history.back()" class="btnRed">Cancelar</a>
+            </div>
+
+
+        </form>
+        </div>
+    </main>
+    <!--end main -->
+    <div class="scrollToTop" id="scroll" onclick="toTop()">
+        <span class="material-symbols-outlined">expand_less</span>
+    </div>
+    <!--footer-->
+    <footer>
+
+        <p class="copyright">© 2023 Sabor em Ação. Todos os direitos reservados / Desenvolvido por <a
+                href="https://contate.me/pedrodev" target="_blank" rel="external">Pedro
+                Henrique</a></p>
+        </div>
+    </footer>
+    <!--end footer-->
+    <!--scripts-->
+    <script th:src="@{/js/modalLogout.js}"></script>
+    <script th:src="@{/js/menuScripts.js}"></script>
+    <script th:src="@{/js/scrollToTop.js}"></script>
+    <!--end scripts-->
+</body>
+
+</html>

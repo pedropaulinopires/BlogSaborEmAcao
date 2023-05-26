@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{styles/imprimir.css}">
+    <style>
+        @page{
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        body{
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    </style>
+    <title th:text="${revenue.name}"></title>
+</head>
+<body>
+    <main>
+        <div class="header">
+            <h1 th:text="${revenue.name}"></h1>
+            <img  th:src="@{images-revenue/{img}(img = ${revenue.image})}" alt="imagem da receita">
+        </div>
+        <div class="body">
+            <div class="desc">
+                <h1>Detalhes</h1>
+                <p th:utext="${revenue.details}"></p>
+            </div>
+            <div class="desc">
+                <h1>Ingredientes</h1>
+                <p th:utext="${revenue.ingredients}"></p>
+            </div>
+            <div class="desc">
+                <h1>Modo de preparo</h1>
+                <p th:utext="${revenue.preparation}"></p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p class="copyright">© 2023 Sabor em Ação. Todos os direitos reservados / Desenvolvido por Pedro
+                Henrique</p>
+    </footer>
+</body>
+</html>

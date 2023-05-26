@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+:root {
+  /*colors project*/
+  --LaranjaClaro: #b37812;
+  --Marrom: #584423;
+  --MarromClaro: #a59882;
+  --VerdeClaro: #3ae9b6;
+  --Azul: #123357;
+  /**************************/
+}
+/*fonts project*/
+@font-face {
+  font-family: "OpenSans";
+  src: url("../font/OpenSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PlayFairDisplay";
+  src: url("../font/PlayfairDisplay-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/******************************************************/
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "PlayFairDisplay";
+}
+
+p,
+a {
+  font-family: "OpenSans";
+}
+
+body,
+html {
+  background-color: var(--LaranjaClaro);
+  width: 100vw;
+  overflow-x: hidden;
+}
+header {
+  display: flex;
+  justify-content: center;
+  background-color: var(--LaranjaClaro);
+}
+header div.imgLogo {
+  background-image: url(../images-project/logo-blog.png);
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  width: 160px;
+}
+main {
+  background-color: rgba(255, 255, 255, 0.67);
+  border-radius: 0.4rem;
+  padding: 1rem;
+}
+.border {
+  background-color: rgba(255, 255, 255, 0.364);
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+  margin-top: 15px;
+  border-radius: 0.4rem;
+  margin-bottom: 6rem;
+}
+
+main h1 {
+  text-align: center;
+  color: var(--Marrom);
+  border-bottom: 2px solid var(--Marrom);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+div.camp {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.camp input {
+  border: 1.7px solid var(--Marrom);
+  border-radius: 0.3rem;
+  padding: 8px 35px 8px 5px;
+  width: 85%;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.camp input:focus {
+  border: 1.7px solid var(--MarromClaro);
+  color: rgb(60, 60, 60);
+}
+.camp label {
+  position: relative;
+  display: inline-block;
+  margin: -0px;
+  top: 7px;
+  width: 10px;
+  left: -43px;
+  cursor: pointer;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.opt {
+  margin: 1rem;
+}
+
+.opt input {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.opt input {
+  accent-color: var(--Marrom);
+}
+
+.opt label {
+  font-size: 1rem;
+  position: relative;
+  top: -3px;
+  cursor: pointer;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+p.invalid {
+  color: red;
+  font-size: 0.9rem;
+}

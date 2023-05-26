@@ -1,0 +1,274 @@
+@charset "UTF-8";
+
+:root {
+  /*colors project*/
+  --LaranjaClaro: #b37812;
+  --Marrom: #584423;
+  --MarromClaro: #a59882;
+  --VerdeClaro: #3ae9b6;
+  --Azul: #123357;
+  /**************************/
+}
+/*fonts project*/
+@font-face {
+  font-family: "OpenSans";
+  src: url("../font/OpenSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PlayFairDisplay";
+  src: url("../font/PlayfairDisplay-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/******************************************************/
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+div.card {
+  width: 100%;
+  margin-top: 3rem;
+  display: inline-block;
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 0.4rem;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+div.cardHeader {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+div.cardHeader {
+  display: block;
+}
+
+div.cardBody {
+  display: block;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+div.cardBody h1 {
+  text-align: start;
+  color: var(--Marrom);
+  font-size: 1.2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1.5px solid var(--Marrom);
+}
+div.info {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-self: center;
+}
+
+div.cardBody > div.info p {
+  color: rgb(159, 159, 159);
+  font-size: 0.9rem;
+  margin: 0.3rem;
+  display: inline-block;
+}
+
+div.cardBody > div.info > p > span.star {
+  font-size: 3rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+@media (hover: hover) and (pointer: fine) {
+  div.cardBody > div.info > p > span.star:hover {
+    color: rgb(192, 192, 87);
+  }
+}
+
+div.cardBody > div.info > p > span.star.active {
+  color: rgb(192, 192, 87);
+}
+
+div.cardBody > div.desc > p {
+  font-size: 1rem;
+  margin-top: 0rem;
+  padding-top: 0rem;
+  line-height: 1.6rem;
+  text-align: justify;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+div.cardBody > div.details {
+  text-align: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+div.details a {
+  display: inline;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  div.card:hover {
+    transform: scale(1.03);
+    transition: 0.3s;
+  }
+}
+
+@media only screen and (min-width: 530px) {
+  div.card {
+    display: inline-block;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  div.cardHeader {
+    background-position: center;
+    width: 40%;
+    background-size: cover;
+    float: left;
+    height: 320px;
+  }
+
+  div.cardBody {
+    width: 60%;
+    float: right;
+  }
+
+  div.cardBody > div.desc > p {
+    font-size: 1rem;
+    margin-top: 0rem;
+    padding-top: 0rem;
+    line-height: 1.6rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  div.cardBody > div.details {
+    padding-top: 0;
+    margin-bottom: 0;
+    margin-top: 1rem;
+  }
+  div.cardBody > div.details > a {
+    padding-bottom: 0;
+    display: inline;
+  }
+}
+
+@media only screen and (min-width: 1330px) {
+  div.card {
+    width: 45%;
+    margin: 1rem;
+  }
+}
+
+div.cardInfo {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 3rem;
+  display: block;
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 0.4rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  transition: 0.3s;
+}
+
+div.cardInfoHeader img {
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+}
+div.cardInfoHeader {
+  text-align: center;
+  display: block;
+  padding: 1rem;
+}
+
+div.cardInfoBody {
+  padding: 1rem;
+  display: block;
+}
+div.cardInfoBody h1 {
+  font-family: "PlayFairDisplay";
+  color: var(--Marrom);
+  border-bottom: 1.5px solid var(--Marrom);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+div.cardInfoBody p {
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.6rem;
+}
+div.cardInfoFooter img {
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.8s;
+}
+
+div.cardInfoFooter a {
+  display: inline;
+  margin: 1rem;
+}
+
+div.cardInfoFooter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media only screen and (min-width: 530px) {
+  div.cardInfoHeader {
+    display: block;
+    width: 40%;
+    float: left;
+  }
+
+  div.cardInfoHeader img {
+    display: block;
+    margin: auto;
+    margin-top: 30%;
+    width: 80%;
+    height: 80%;
+  }
+  div.cardInfoBody {
+    display: block;
+    width: 60%;
+    float: right;
+  }
+
+  div.cardInfoBody p {
+    font-size: 1rem;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  div.cardInfo:hover {
+    transform: scale(1.03);
+    transition: 0.3s;
+  }
+
+  div.cardInfoFooter img:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+  }
+}

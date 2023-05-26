@@ -1,0 +1,178 @@
+@charset "UTF-8";
+
+:root {
+  /*colors project*/
+  --LaranjaClaro: #b37812;
+  --Marrom: #584423;
+  --MarromClaro: #a59882;
+  --VerdeClaro: #3ae9b6;
+  --Azul: #123357;
+  /**************************/
+}
+/*fonts project*/
+@font-face {
+  font-family: "OpenSans";
+  src: url("../font/OpenSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PlayFairDisplay";
+  src: url("../font/PlayfairDisplay-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/******************************************************/
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/*bnt menu mobile*/
+span#menuBtn {
+  display: block;
+  float: right;
+  margin-top: 15px;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+span#menuBtn div {
+  width: 35px;
+  height: 3px;
+  border-radius: 5rem;
+  background-color: white;
+  transition: all 0.3s;
+}
+span#menuBtn div:not(:last-child) {
+  margin-bottom: 0.4rem;
+}
+
+span#menuBtn.active div.line1 {
+  transform: rotate(45deg) translate(10px, 10px);
+  transition: all 0.3s;
+}
+span#menuBtn.active div.line2 {
+  opacity: 0;
+  transition: all 0.3s;
+}
+span#menuBtn.active div.line3 {
+  transform: rotate(-45deg) translate(4px, -3px);
+  transition: all 0.3s;
+}
+@media (hover: hover) and (pointer: fine) {
+  span#menuBtn:hover div {
+    background-color: var(--Marrom);
+    transition: all 0.3s;
+  }
+}
+
+/*button search*/
+.btnSearch {
+  background-color: var(--Marrom);
+  color: white;
+  font-family: "OpenSans";
+  font-size: 1.1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  height: 50px;
+  vertical-align: middle;
+  border: none;
+  border-top-right-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btnSearch:hover {
+    opacity: 0.9;
+    transition: opacity 0.2s ease-in-out;
+  }
+}
+
+/*btn card details*/
+.btnDetails {
+  background-color: var(--Marrom);
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btnDetails:hover {
+    opacity: 0.9;
+    transition: 0.2s;
+  }
+}
+
+@media only screen and (min-width: 530px) {
+  .btnDetails {
+    font-size: 1rem;
+  }
+}
+
+.btnBlue {
+  background-color: blue;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btnRed {
+  background-color: red;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btnBlue:hover,
+  .btnRed:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+  }
+}
+
+.btnBack {
+  border: 1px solid var(--Marrom);
+  background-color: white;
+  width: 39px;
+  height: 38px;
+  padding: 0.4rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.back {
+  color: var(--Marrom);
+  transition: 0.3s ease-in-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btnBack:hover {
+    background-color: var(--Marrom);
+    .back {
+      color: white;
+    }
+  }
+}

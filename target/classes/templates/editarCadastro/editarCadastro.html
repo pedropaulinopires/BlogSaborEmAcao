@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../static/images-project/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" th:href="@{/images-project/favicon.ico}" type="image/x-icon">
+
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!--thymeleaf-->
+    <link rel="stylesheet" th:href="@{/styles/cadastro.css}">
+
+    <link rel="stylesheet" th:href="@{/styles/scrollToTop.css}">
+
+    <link rel="stylesheet" th:href="@{/styles/spin.css}">
+
+    <link rel="stylesheet" th:href="@{/styles/footer.css}">
+
+    <link rel="stylesheet" th:href="@{/styles/buttons.css}">
+
+    
+    <title>Cadastro</title>
+</head>
+<body>
+    <header>
+        <a th:href="@{/}">
+            <div class="imgLogo"></div>
+        </a>
+    </header>
+    <!--form-->
+    <main>
+        <div class="imgForm">
+            <!--img-->
+        </div>
+        <form th:action="@{/cadastro/atualizar/{id}(id = ${userId})}" th:object="${loginEdit}" method="POST">
+            <h1>Editar Email</h1>
+            <p class="msg">Edite seu email aqui!</p>
+            
+            <div class="camp">
+                <input type="text" th:field="*{email}" name="email" placeholder="E-mail">
+                <p class="invalid" th:errors="*{email}"></p>
+                <p class="invalid" th:if="${emailInvalid}" th:text="${emailInvalid}"></p>
+                <p class="invalid" th:if="${lengthEmail}">Email com no minimo 8 caracteres!</p>
+            </div>
+            <div class="campSpin">
+                <div class="spin" id="spin"></div>
+            </div>
+            <div class="btn">
+                <input type="submit" id="btnSubmit"  onclick="clickBtnSubmit()" value="Edita Cadastro" class="btnDetails" >
+            </div>
+            <div style="text-align: center;margin-bottom: 1rem;">
+                <button onclick="javascript:history.back()" class="btnBack"><span class="material-symbols-outlined back">
+                    arrow_back
+                    </span></button>
+            </div>
+            <div class="info">
+                <p>Já tem uma conta?<a th:href="@{/login}"> Faça login</a></p>
+            </div>
+        </form>
+    </main>
+    <!--end form-->
+    <div class="scrollToTop" id="scroll" onclick="toTop()">
+        <span class="material-symbols-outlined">expand_less</span>
+    </div>
+    <!--footer-->
+    <footer th:replace="~{fragments/fragmentsClient :: footer}"></footer>
+    <!--end footer-->
+    
+    <script th:src="@{/js/scrollToTop.js}"></script>
+    <script th:src="@{/js/spinActive.js}"></script>
+    <script th:src="@{/js/searchRevenueValidation.js}"></script>
+</body>
+</html>

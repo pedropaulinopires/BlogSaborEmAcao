@@ -1,0 +1,44 @@
+ <!--header mobile-->
+ <header th:fragment="menuMobile" id="headerMobile" xmlns:th="http://www.w3.org/1999/xhtml"
+         >
+    <a th:href="@{/adm/home}" id="logoHomeMobile">
+        <div id="imgMobile"></div>
+    </a>
+    <span id="menuBtn" onclick="menuShow()">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </span>
+    <ul id="optionMobile">
+        <li><a th:href="@{/adm/home}" onclick="menuShow()">Home</a></li>
+        <li><a th:href="@{/adm/adicionarReceita}" onclick="menuShow()">Adicionar Receita</a></li>
+        <li><a th:href="@{/adm/adicionarSessao}" onclick="menuShow()">Adicionar
+                sessão</a></li>
+                <li><a th:href="@{/adm/listarReceita}" onclick="menuShow()">Listar Receitas</a></li>
+        <li><a th:href="@{/adm/listarSessao}" onclick="menuShow()">Listar Sessões</a></li>
+        <li><a th:href="@{/adm/listarUsuarios}" onclick="menuShow()">Listar Usuários</a></li>
+        <li><a onclick="menuShow(),clickModalLogout()">Sair</a></li>
+    </ul>
+</header>
+<!--end header mobile-->
+
+<!--header desktop-->
+<header th:fragment="menuDesktop" id="headerDesktop" xmlns:th="http://www.w3.org/1999/xhtml">
+    <a th:href="@{/adm/home}"  id="logoHomeDesktop">
+        <div id="imgDesktop">
+            <!--img logo-->
+        </div>
+    </a>
+
+    <ul id="optionsDesktop">
+        <li><a th:href="@{/adm/home}">Home</a></li>
+        <li><a th:href="@{/adm/adicionarReceita}" >Adicionar Receita</a></li>
+
+        <li><a th:href="@{/adm/adicionarSessao}">Adicionar
+                sessão</a></li>
+        <li><a th:href="@{/adm/listarReceita}">Listar Receitas</a></li>
+        <li><a th:href="@{/adm/listarSessao}">Listar Sessões</a></li>
+        <li><a th:href="@{/adm/listarUsuarios}">Listar Usuários</a></li>
+        <li><a onclick="clickModalLogout()">Sair</a></li>
+    </ul>
+</header>
